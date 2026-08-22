@@ -1,0 +1,47 @@
+body
+{
+  background-color:rgb(25, 25, 25);
+  color:white;
+  font-family: Arial;
+}
+.title
+{
+  font-size: 25px;
+  font-weight:bold;
+}
+.mov
+{
+  background-color: transparent;
+  border:3px solid white;
+  width:120px;
+  height:120px;
+  border-radius:60px;
+  margin-right:10px;
+  cursor:pointer;
+}
+.ic
+{
+  height:50px;
+}
+.result
+{
+  font-size:25px;
+  font-weight:bold;
+  margin-top:50px;
+  margin-left:10px;
+}
+.set{
+  padding:8px 15px;
+  border:none;
+  margin-top: 15px;
+  font-size:15px;
+  cursor:pointer;
+}
+.res
+{
+  margin-top:40px;
+  font-size: 21px;
+}
+.te{
+  font-size:24px;
+}
