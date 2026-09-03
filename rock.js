@@ -12,6 +12,77 @@ let score = JSON.parse(localStorage.getItem('rscore')) || {wins:0, loses:0, ties
     else if(choice>=0.66 && choice<1)
       compmove='scissors';
   }
+  let isplaying=false;
+  let id;
+  function auto() {
+  if (!isplaying) {
+
+    id = setInterval(()=> {
+
+      choose();
+      const playermove = compmove;
+
+      choose();
+
+      play(playermove);
+
+    },1000);
+
+    isplaying = true;
+
+  } else {
+
+    clearInterval(id);
+    isplaying = false;
+  }
+}
+document.querySelector('.js-rock').addEventListener('click',()=>
+{
+  choose();
+  play('rock');
+});
+document.querySelector('.js-sci').addEventListener('click',()=>
+{
+  choose();
+  play('scissors');
+});
+document.querySelector('.js-paper').addEventListener('click',()=>
+{
+  choose();
+  play('paper');
+});
+document.querySelector('.set').addEventListener('click',()=>
+{
+  score.wins=0;
+  score.loses=0;
+  score.ties=0;
+  compmove='';
+  result='';
+  update('');
+  localStorage.removeItem('rscore');
+});
+document.querySelector('.auto').addEventListener('click',()=>
+{
+ auto(); stop();
+});
+
+document.body.addEventListener('keydown',(event)=>
+{
+  if(event.key==='r')
+    {choose();
+    play('rock');
+    }
+  else if(event.key==='s')
+  {
+    choose();
+    play('scissors');
+  }
+  else if(event.key==='p')
+  {
+    choose();
+    play('paper');
+  }
+});
   function play(playermove)
   {
       if(compmove===playermove)
@@ -45,3 +116,17 @@ update(playermove);
      document.querySelector('.sco').innerHTML = '';
    }
   }
+  function stop()
+  {
+  const au=document.querySelector('.auto');
+  if(au.innerText==='Auto-Play')
+  {
+    au.innerText='Stop';
+    au.classList.add('sto');
+  }
+  else
+    {
+      au.innerText='Auto-Play';
+      au.classList.remove('sto');
+    }
+}

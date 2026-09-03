@@ -8,30 +8,15 @@
 </head>
 <body>
   <p class="title">Rock Paper Scissors</p>
-  <button class="mov" onclick=" 
-  choose();
-  play('rock');
-  "><img src="rock-emoji.png" class="ic"></button>
-    <button class="mov" onclick=" 
-  choose();
-  play('scissors');
-  "><img src="scissors-emoji.png" class="ic"></button>
-    <button class="mov" onclick=" 
- choose();
- play('paper');
-  "><img src="paper-emoji.png" class="ic"></button>
+  <button class="mov js-rock" 
+  ><img src="rock-emoji.png" class="ic"></button>
+    <button class="mov js-sci" ><img src="scissors-emoji.png" class="ic"></button>
+    <button class="mov js-paper" ><img src="paper-emoji.png" class="ic"></button>
   <p class="result"></p>
   <p class="sco"></p>
   <p class="res"></p>
-  <button class="set" onclick="
-  score.wins=0;
-  score.loses=0;
-  score.ties=0;
-  compmove='';
-  result='';
-  update('');
-  localStorage.removeItem('rscore');
-  ">Reset</button>
+  <button class="set">Reset</button>
+  <button class="auto">Auto-Play</button>
   <script src="rock.js"></script>       
 </body>
 </html>
